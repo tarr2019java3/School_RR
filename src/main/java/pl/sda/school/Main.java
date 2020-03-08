@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-
         School school = new School("Ekonomincza", "Toruń");
         School school1 = new School("Zawodowa", "Chełmża");
         School school2 = new School("Informatyczna", "Warszawa");
@@ -42,16 +41,20 @@ public class Main {
         listaSzkola3.add(student7);
 
         Map<School, List<Student>> map = new HashMap<School, List<Student>>();
-        map.put(school,listaSzkola);
-        map.put(school1,listaSzkola1);
-        map.put(school2,listaSzkola2);
-        map.put(school3,listaSzkola3);
+        map.put(school, listaSzkola);
+        map.put(school1, listaSzkola1);
+        map.put(school2, listaSzkola2);
+        map.put(school3, listaSzkola3);
 
-        for (Map.Entry<School, List<Student>> entry : map.entrySet())
-        {
-            System.out.println("Szkoła: " + entry.getKey() + " " + "Studenci: " + entry.getValue());
+        for (Map.Entry<School, List<Student>> entry : map.entrySet()) {
+            System.out.println(" - " + entry.getKey().getCity());
+            System.out.println("-"+ entry.getKey().getName());
+            for (Student s : entry.getValue()) {
+                System.out.println("    - " + s.getName() + " " + s.getLastname());
+                System.out.println();
+
+            }
         }
-
     }
 }
 
